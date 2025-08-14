@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>X.com Toolkit</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="header">
+        <h1>X.com Toolkit</h1>
+        <select id="modeSelector">
+            <option value="scrape">Scrape Users (Reposts/Follows)</option>
+            <option value="unfollow">Unfollow Non-Followers</option>
+            <option value="delete">Auto Delete Replies</option>
+            <option value="undo_reposts">Undo All Reposts</option>
+        </select>
+    </div>
+
+    <div id="scrape-mode-controls" class="mode-panel">
+        <p>Go to a Reposts, Likes, or Followers list page, then click Start.</p>
+    </div>
+
+    <div id="unfollow-mode-controls" class="mode-panel hidden">
+        <p class="warning"><strong>Warning:</strong> This is a high-risk tool. Go to your own "Following" list to enable it. Use slowly to avoid account suspension.</p>
+    </div>
+
+    <div id="delete-mode-controls" class="mode-panel hidden">
+        <p class="warning"><strong>Warning:</strong> This will attempt to auto-delete your replies.<br>High risk of account suspension. Use at your own risk. Go to your replies page before starting.</p>
+    </div>
+
+    <div id="undo-reposts-mode-controls" class="mode-panel hidden">
+        <p class="warning"><strong>Warning:</strong> This will attempt to undo all your reposts (retweets) from your profile.<br>Extremely high risk of account suspension. Use at your own risk. Go to your profile's "Reposts" tab before starting.</p>
+    </div>
+
+    <!-- NEW SETTINGS PANEL -->
+    <details class="settings-container">
+        <summary>Advanced Settings</summary>
+        <div class="settings-panel">
+            <label for="unfollowLimit">Unfollow Limit:</label>
+            <div>
+                <input type="number" id="unfollowLimit" class="settings-input">
+                <small>Max users to unfollow per session.</small>
+            </div>
+
+            <label for="deleteLimit">Delete Limit:</label>
+            <div>
+                <input type="number" id="deleteLimit" class="settings-input">
+                <small>Max replies to delete per session.</small>
+            </div>
+
+            <label>Delay (ms):</label>
+            <div class="input-group">
+                <input type="number" id="minDelay" class="settings-input" placeholder="Min">
+                <input type="number" id="maxDelay" class="settings-input" placeholder="Max">
+                <small>Random delay between actions (for Unfollow/Delete/Undo).</small>
+            </div>
+            
+            <label for="scrollDelay">Scroll Delay (ms):</label>
+             <div>
+                <input type="number" id="scrollDelay" class="settings-input">
+                <small>Time to wait after scrolling down.</small>
+            </div>
+        </div>
+    </details>
+
+    <div class="actions">
+        <button id="startButton">Start</button>
+        <button id="stopButton" class="hidden">Stop</button>
+    </div>
+
+    <div id="status">Ready.</div>
+    
+    <textarea id="results" readonly placeholder="Results will appear here..."></textarea>
+    
+    <div class="export-actions">
+        <button id="copyButton" class="hidden">Copy to Clipboard</button>
+        <button id="exportButton" class="hidden">Download as CSV</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

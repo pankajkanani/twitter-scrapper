@@ -1,0 +1,153 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    width: 350px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f5f8fa;
+}
+.header {
+    margin-bottom: 15px;
+}
+h1 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #14171a;
+}
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccd6dd;
+    border-radius: 5px;
+    background-color: white;
+}
+.mode-panel p {
+    font-size: 13px;
+    color: #657786;
+    background-color: #e1e8ed;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+}
+.mode-panel p.warning {
+    background-color: #fff0f0;
+    color: #d93025;
+    font-weight: 500;
+}
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+button {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #1DA1F2;
+    color: white;
+    transition: background-color 0.2s;
+}
+button:disabled {
+    background-color: #aab8c2;
+    cursor: not-allowed;
+}
+button:hover:not(:disabled) {
+    background-color: #0c85d0;
+}
+#stopButton {
+    background-color: #e0245e;
+}
+#stopButton:hover:not(:disabled) {
+    background-color: #b81242;
+}
+#status {
+    margin: 10px 0;
+    font-weight: bold;
+    min-height: 18px;
+    color: #14171a;
+}
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 12px;
+    border: 1px solid #ccd6dd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.export-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+#copyButton, #exportButton {
+    background-color: #28a745;
+}
+#copyButton:hover:not(:disabled), #exportButton:hover:not(:disabled) {
+    background-color: #218838;
+}
+.hidden {
+    display: none;
+}
+/* --- Add these styles to the end of your popup.css file --- */
+
+.settings-container {
+    margin-bottom: 15px;
+    border: 1px solid #ccd6dd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.settings-container[open] summary {
+    border-bottom: 1px solid #ccd6dd;
+}
+summary {
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    color: #14171a;
+}
+.settings-panel {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+.settings-panel label {
+    font-weight: 500;
+    font-size: 13px;
+    text-align: right;
+    padding-right: 10px;
+    color: #657786;
+}
+.settings-panel .input-group {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.settings-panel .settings-input {
+    width: 60px; /* Default width for single inputs */
+    padding: 5px;
+    border: 1px solid #ccd6dd;
+    border-radius: 4px;
+}
+.settings-panel .input-group .settings-input {
+    flex-grow: 1; /* Allow min/max to share space */
+}
+.settings-panel small {
+    font-size: 11px;
+    color: #657786;
+    grid-column: 2 / 3; /* Span the second column */
+    margin-top: -8px; /* Pull it closer to the input */
+}
+.settings-panel .input-group small {
+    width: 100%; /* Make the small text take full width in the group */
+    margin-top: 2px;
+}
